@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../providers/auth_provider.dart';
+import '../../settings/providers/language_provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -58,6 +59,15 @@ class _LoginScreenState extends State<LoginScreen> {
     final l10n = AppLocalizations.of(context)!;
     
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language),
+            onPressed: () => _showLanguageDialog(context),
+            tooltip: l10n.language,
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -210,6 +220,65 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showLanguageDialog(BuildContext context) {
+    final languageProvider = context.read<LanguageProvider>();
+    final l10n = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.selectLanguage),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: languageProvider.supportedLanguages
+              .map((lang) => _buildLanguageOption(
+                    context,
+                    lang['code']!,
+                    lang['name']!,
+                    lang['flag']!,
+                  ))
+              .toList(),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(l10n.cancel),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLanguageOption(
+    BuildContext context,
+    String code,
+    String name,
+    String flag,
+  ) {
+    final languageProvider = context.watch<LanguageProvider>();
+    final l10n = AppLocalizations.of(context)!;
+    return RadioListTile<String>(
+      value: code,
+      groupValue: languageProvider.locale.languageCode,
+      onChanged: (value) {
+        if (value != null) {
+          languageProvider.setLanguage(value);
+          Navigator.pop(context);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(l10n.languageChanged(name))),
+          );
+        }
+      },
+      title: Row(
+        children: [
+          Text(flag, style: const TextStyle(fontSize: 24)),
+          const SizedBox(width: 12),
+          Text(name),
+        ],
+      ),
+      dense: true,
     );
   }
 }
