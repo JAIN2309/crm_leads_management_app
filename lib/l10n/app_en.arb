@@ -1,0 +1,132 @@
+{
+  "@@locale": "en",
+  "appTitle": "CRM Lead Management",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  "welcomeBack": "Welcome back!",
+  "@welcomeBack": {
+    "description": "Welcome message on dashboard"
+  },
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "emailRequired": "Email is required",
+  "invalidEmail": "Invalid email format",
+  "passwordRequired": "Password is required",
+  "passwordTooShort": "Password must be at least 6 characters",
+  "loggingIn": "Logging in...",
+  "dashboard": "Dashboard",
+  "overview": "Overview",
+  "quickActions": "Quick Actions",
+  "totalLeads": "Total Leads",
+  "todaysFollowUps": "Today's Follow-ups",
+  "convertedLeads": "Converted Leads",
+  "pendingLeads": "Pending Leads",
+  "pending": "pending",
+  "won": "won",
+  "inProgress": "In progress",
+  "viewAllLeads": "View All Leads",
+  "browseLeads": "Browse and manage your leads",
+  "todaysFollowUpsAction": "Today's Follow-ups",
+  "leadsNeedAttention": "{count} leads need attention",
+  "@leadsNeedAttention": {
+    "description": "Number of leads needing attention",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reportsAnalytics": "Reports & Analytics",
+  "viewPerformance": "View performance metrics",
+  "comingSoon": "coming soon!",
+  "leads": "Leads",
+  "today": "Today",
+  "searchLeads": "Search by name, company, or phone...",
+  "all": "All",
+  "newStatus": "New",
+  "contacted": "Contacted",
+  "qualified": "Qualified",
+  "proposal": "Proposal",
+  "negotiation": "Negotiation",
+  "converted": "Converted",
+  "lost": "Lost",
+  "noLeadsFound": "No Leads Found",
+  "adjustFilters": "Try adjusting your search or filters",
+  "clearFilters": "Clear Filters",
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High",
+  "urgent": "Urgent",
+  "nextFollowUp": "Next Follow-up: {date}",
+  "@nextFollowUp": {
+    "description": "Next follow-up date",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "leadDetails": "Lead Details",
+  "contactInformation": "Contact Information",
+  "mobile": "Mobile",
+  "address": "Address",
+  "companyName": "Company",
+  "leadInformation": "Lead Information",
+  "source": "Source",
+  "status": "Status",
+  "priority": "Priority",
+  "assignedTo": "Assigned To",
+  "createdOn": "Created On",
+  "customerImages": "Customer Images",
+  "addImage": "Add Image",
+  "noImages": "No images added yet",
+  "deleteImage": "Delete Image",
+  "deleteImageConfirm": "Are you sure you want to delete this image?",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "followUpHistory": "Follow-up History",
+  "noFollowUps": "No follow-up activities yet",
+  "addFollowUp": "Add Follow-up",
+  "call": "Call",
+  "meeting": "Meeting",
+  "quotation": "Quotation",
+  "selectType": "Select Type",
+  "selectStatus": "Select Status",
+  "selectPriority": "Select Priority",
+  "remark": "Remark",
+  "remarkRequired": "Remark is required",
+  "remarkTooShort": "Remark must be at least 10 characters",
+  "date": "Date",
+  "selectDate": "Select Date",
+  "submit": "Submit",
+  "settings": "Settings",
+  "appearance": "Appearance",
+  "darkMode": "Dark Mode",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "language": "Language",
+  "account": "Account",
+  "profile": "Profile",
+  "logout": "Logout",
+  "signOut": "Sign out from your account",
+  "about": "About",
+  "version": "Version",
+  "termsConditions": "Terms & Conditions",
+  "privacyPolicy": "Privacy Policy",
+  "selectLanguage": "Select Language",
+  "languageChanged": "Language changed to {language}",
+  "@languageChanged": {
+    "description": "Language change confirmation",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "logoutConfirm": "Are you sure you want to logout?",
+  "toggleTheme": "Toggle theme",
+  "profileFeature": "Profile feature coming soon!",
+  "reportsFeature": "Reports feature coming soon!"
+}
