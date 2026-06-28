@@ -1,6 +1,7 @@
 // lib/core/splash/splash_screen.dart
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -43,6 +44,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context);
     
     return Scaffold(
       backgroundColor: colorScheme.primary,
@@ -71,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen>
               opacity: _fadeAnimation,
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'CRM',
                     style: TextStyle(
                       fontSize: 48,
@@ -82,7 +84,7 @@ class _SplashScreenState extends State<SplashScreen>
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Lead Management',
+                    l10n?.appTitle ?? 'CRM Lead Management',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white.withOpacity(0.9),

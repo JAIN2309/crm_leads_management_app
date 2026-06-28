@@ -99,7 +99,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       hintText: l10n.email,
                       prefixIcon: const Icon(Icons.email_outlined),
                     ),
-                    validator: context.read<AuthProvider>().validateEmail,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return l10n.emailRequired;
+                      }
+                      final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                      if (!emailRegex.hasMatch(value)) {
+                        return l10n.invalidEmail;
+                      }
+                      return null;
+                    },
                     textInputAction: TextInputAction.next,
                   ),
                   const SizedBox(height: 16),
@@ -123,7 +132,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       ),
                     ),
-                    validator: context.read<AuthProvider>().validatePassword,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return l10n.passwordRequired;
+                      }
+                      if (value.length < 6) {
+                        return l10n.passwordTooShort;
+                      }
+                      return null;
+                    },
                     textInputAction: TextInputAction.done,
                     onFieldSubmitted: (_) => _handleLogin(),
                   ),
