@@ -1,5 +1,7 @@
 # CRM Lead Management Mobile Application
 
+[![Live Demo](https://img.shields.io/badge/demo-live-blue.svg)](https://jain2309.github.io/crm_leads_management_app/)
+
 A professional, production-ready Flutter mobile application for managing CRM leads with a clean Material 3 design.
 
 ## 🎯 Features

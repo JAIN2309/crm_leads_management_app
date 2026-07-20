@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:crm_leads_mobile_app/l10n/app_localizations.dart';
 import '../../leads/providers/lead_provider.dart';
 import '../../leads/screens/lead_list_screen.dart';
 import '../../leads/models/lead_model.dart';
